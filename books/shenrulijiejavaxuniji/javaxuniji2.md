@@ -114,3 +114,46 @@ GC Roots对象包括以下几种：
 3. 安全区域
 
 #### 垃圾收集器
+
+>
+1. serial收集器
+2. parnew收集器
+3. parallel scavenge收集器
+是一个新生代收集器，也是复制算法收集器，并行的多线程收集器
+4. serial old收集器
+单线程收集器，使用标记整理算法。
+5. parallel old收集器
+使用多线程和标记整理算法。
+6. cms收集器
+以获取最短回收停顿时间为目标的收集器。基于标记清除算法实现的。
+7. g1收集器
+当今收集器技术发展最前沿的成果之一。
+8. 理解gc日志
+
+#### 内存分配与回收策略
+
+1. 对象有限在eden分配
+2. 大对象直接进入老年代
+3. 长期存活的对象将进入老年代
+4. 动态对象年龄判定
+5. 空间分配担保
+
+### 虚拟机性能监控与故障处理工具
+数据：运行日志，异常堆栈，GC日志，线程快照，堆转储快照等。
+
+1. jdk命令行工具
+    1.1 jps JVM process status tool 显示虚拟机进程
+    1.2 jstat JVM statistics Monitoring Tool 收集虚拟机各方面运行数据。
+    1.3 jinfo Configuration Info for Java显示虚拟机配置信息
+    1.4 jmap Memory Map for java 虚拟机内存转储快照
+    1.5 jhat JVM Heap dump browser 用于分析heapdump文件
+    1.6 jstack stack trace for java 显示虚拟机的线程快照
+
+2. jdk可视化工具
+    2.1 jconsole java见识与管理控制台
+    2.2 visualVM 多合一故障处理工具
+
+### 调优案例分析与实战
+ 
+1. 案例分析
+2. 实战：eclipse运行速度调优
